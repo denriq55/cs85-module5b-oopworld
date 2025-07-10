@@ -1,6 +1,7 @@
 
 <?php
-
+date_default_timezone_set('America/Los_Angeles');
+echo "<p class='todays-date'>Today is " . date("l, F j, Y - g:i A") . "</p>";
 //create Habit class
 class Habit {
     public $habitName;
