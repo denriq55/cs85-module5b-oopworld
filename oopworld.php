@@ -36,13 +36,13 @@ class Habit {
     //Possible values: any, morning, afternoon, night
     public function updateTimeOfDay($newTime) {
         $this->timeOfDay = $newTime;
-        return "<p>Time of day updated to: " . $this->timeOfDay . "</p>";
+        return "<p><b>" . $this->habitName . "</b> - Time of day updated to: " . $this->timeOfDay . "</p>";
     }
 
     //Method to change frequency. 
     public function updateFrequency($newFrequency) {
         $this->frequency = $newFrequency;
-        return "<p>Frequency updated to: " . $this->frequency . "</p>";
+        return "<p><b>" . $this->habitName . " </b> - Frequency updated to: " . $this->frequency . "</p>";
     }
 
     //Method to display summary of habit.
@@ -60,14 +60,16 @@ echo $habit1->displaySummary();
 $habit2 = new Habit("Gym", "Health", "Daily", "Morning");
 $habit2->isComplete = false;
 
+echo $habit2->displaySummary(); 
+//Expected Output: Gym | Health | Daily | Morning | ❌
+
 echo $habit2->updateTimeOfDay("Afternoon");
-//Expected output: Time of day updated to: Afternoon
+//Expected output: Gym - Time of day updated to: Afternoon
 
 echo $habit2->updateFrequency("M, W, F");
-//Expected output: Frequency updated to: M, W, F
+//Expected output: Gym - Frequency updated to: M, W, F
 
 echo $habit2->displaySummary(); 
-//Expected Output: Gym | Health | Afternoon | M,W,F | ❌
-
+//Expected Output: Gym | Health | M, W, F | Morning | ❌
 
 ?>
