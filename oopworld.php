@@ -1,4 +1,8 @@
-
+<style>
+    .todays-date {
+        font-size: 1.6rem;
+    }
+</style>
 <?php
 date_default_timezone_set('America/Los_Angeles');
 echo "<p class='todays-date'>Today is " . date("l, F j, Y - g:i A") . "</p>";
